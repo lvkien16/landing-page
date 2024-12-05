@@ -33,7 +33,7 @@ export default function Search({ products, setProducts, search, setSearch }) {
           onChange={handleChange}
         />
         <button
-          type="submit"
+          type="button"
           className="flex justify-center px-2 text-pink-600 items-center text-xl"
         >
           <IoIosSearch />

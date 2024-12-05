@@ -16,8 +16,8 @@ export default function Home() {
     fetchProducts();
   }, [search]);
   return (
-    <div className="flex justify-center">
-      <div className="bg-pink-50 min-h-[100vh]">
+    <div className="flex justify-center ">
+      <div className="w-full sm:w-2/3 md:w-1/3 lg:w-1/4 bg-pink-50 min-h-[100vh]">
         <Search
           products={products}
           setProducts={setProducts}
