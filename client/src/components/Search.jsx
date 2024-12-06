@@ -2,13 +2,12 @@ import React, { useEffect, useState } from "react";
 import { IoIosSearch } from "react-icons/io";
 
 export default function Search({ products, setProducts, search, setSearch }) {
-
- const handleChange = (e) => {
+  const handleChange = (e) => {
     setSearch(e.target.value);
-  }
+  };
 
   useEffect(() => {
-    if(search === "") return;
+    if (search === "") return;
     const fetchProducts = async () => {
       const response = await fetch(`/api/product/search/${search}`);
       const data = await response.json();

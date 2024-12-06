@@ -4,6 +4,12 @@ import removeAccents from "remove-accents";
 export const createProduct = async (req, res) => {
   const { name, image, link } = req.body;
   try {
+    if (!name || !image || !link) {
+      return res.status(400).json({
+        success: false,
+        message: "Missing required fields",
+      });
+    }
     const product = await Product.create({
       name,
       nameWithoutAccents: removeAccents(name),

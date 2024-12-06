@@ -31,6 +31,9 @@ export default function Dashboard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if(!image) return;
+    if(!form.name) return;
+    if(!form.link) return;
     try {
       const res = await fetch("/api/product/create", {
         method: "POST",
