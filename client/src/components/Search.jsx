@@ -9,7 +9,7 @@ export default function Search({ products, setProducts, search, setSearch }) {
   useEffect(() => {
     if (search === "") return;
     const fetchProducts = async () => {
-      const response = await fetch(`/api/product/search/${search}`);
+      const response = await fetch(`https://ohshiec-api.vercel.app/api/product/search/${search}`);
       const data = await response.json();
       setProducts(data);
     };

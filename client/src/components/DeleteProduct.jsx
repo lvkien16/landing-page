@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function DeleteProduct({ product, setIsLoadAgain, isLoadAgain }) {
     const handleDelete = async () => {
         try {
-            const response = await fetch(`/api/product/delete/${product._id}`, {
+            const response = await fetch(`https://ohshiec-api.vercel.app/api/product/delete/${product._id}`, {
                 method: "DELETE",
             });
             const data = await response.json();

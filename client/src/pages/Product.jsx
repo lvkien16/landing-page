@@ -35,7 +35,7 @@ export default function Dashboard() {
     if(!form.name) return;
     if(!form.link) return;
     try {
-      const res = await fetch("/api/product/create", {
+      const res = await fetch("https://ohshiec-api.vercel.app/api/product/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

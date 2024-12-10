@@ -7,7 +7,7 @@ export default function Delete() {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const response = await fetch("/api/product/get-products");
+      const response = await fetch("https://ohshiec-api.vercel.app/api/product/get-products");
       const data = await response.json();
       setProducts(data);
     };
