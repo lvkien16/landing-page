@@ -5,7 +5,7 @@ export default defineConfig({
     server: {
         proxy: {
             "/api": {
-                target: "http://localhost:3000", // Backend cục bộ
+                target: "https://ohshiec-api.vercel.app/", // Backend cục bộ
                 changeOrigin: true,
                 secure: false,
             },

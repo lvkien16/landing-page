@@ -27,6 +27,10 @@ app.listen(process.env.PORT || 3000, () => {
 
 app.use("/api/product", productRoutes);
 app.use("/api/auth", authRoutes);
+app.get("/", (req, res) => {
+  res.send("Welcome to the API!");
+});
+
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
