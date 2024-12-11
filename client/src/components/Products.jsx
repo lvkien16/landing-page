@@ -11,7 +11,7 @@ export default function Products({ products }) {
           ))
         ) : (
           <h1 className="text-center text-2xl text-pink-600 w-full">
-            No products found
+            Loading...
           </h1>
         )}
       </div>
