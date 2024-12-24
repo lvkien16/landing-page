@@ -4,11 +4,7 @@ import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { ToastContainer, toast } from 'react-toastify';
 
 export default function Dashboard() {
-  const [form, setForm] = useState({
-    image: "",
-    name: "",
-    link: "",
-  });
+  const [form, setForm] = useState({});
   const [image, setImage] = useState(null);
 
   const handleChange = (e) => {
@@ -52,7 +48,9 @@ export default function Dashboard() {
         },
         body: JSON.stringify({ ...form, image }),
       });
-      setForm({ image: "", name: "", link: "" });
+      setForm(null);
+      toast.success("Thêm sản phẩm thành công");
+      setImage("");
     } catch (error) {
       console.error(error.message);
     }
