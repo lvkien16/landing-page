@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import storage from "../firebase";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Dashboard() {
   const [form, setForm] = useState({
@@ -31,9 +32,18 @@ export default function Dashboard() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(!image) return;
-    if(!form.name) return;
-    if(!form.link) return;
+    if(!image){
+      toast.error("Chưa chọn ảnh");
+      return;
+    };
+    if(!form.name) {
+      toast.error("Chưa nhập tên sản phẩm");
+      return;
+    };
+    if(!form.link) {
+      toast.error("Chưa nhập link");
+      return;
+    };
     try {
       const res = await fetch("https://ohshiec-api.vercel.app/api/product/create", {
         method: "POST",
@@ -102,6 +112,7 @@ export default function Dashboard() {
           </button>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 }
